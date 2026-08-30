@@ -142,17 +142,6 @@ height:100vh;
 
 /* CHAT SIDE */
 
-.chat-header{
-display:flex;
-align-items:center;
-gap:10px;
-margin-bottom:15px;
-}
-
-.chat-header .logo{
-height:40px;
-}
-
 .chat-pane{
 width:380px;
 background:white;
