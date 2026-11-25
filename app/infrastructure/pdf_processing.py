@@ -1,9 +1,9 @@
-import fitz  # PyMuPDF 
+import pymupdf  # PyMuPDF
 
 
 def detect_intro_pages(pdf_path: str) -> int:
     # Open the PDF file using the provided path
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
 
     try:
         # Get the page label definitions from the PDF.
@@ -43,7 +43,7 @@ def detect_intro_pages(pdf_path: str) -> int:
 
 def iter_pages_with_labels(pdf_path: str):
     # Open the PDF document using the given file path
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
 
     try:
         # Iterate over all pages in the document

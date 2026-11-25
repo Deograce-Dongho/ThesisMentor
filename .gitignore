@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Secrets
+.env
+
+# User uploads and generated indexes
+app/static/uploads/*
+!app/static/uploads/.gitkeep
+app/data/
+
+# Office lock files
+~$*

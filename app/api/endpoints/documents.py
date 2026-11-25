@@ -3,6 +3,8 @@ import uuid
 from fastapi import APIRouter, UploadFile, File
 from fastapi.responses import JSONResponse
 from app.infrastructure.pdf_processing import detect_intro_pages
+from app.infrastructure.registry import save_index
+from app.services.indexing_service import build_document_index
 
 router = APIRouter()
 
@@ -40,12 +42,17 @@ async def upload(file: UploadFile = File(...)):
         # Detect introduction pages
         intro_page_count = detect_intro_pages(save_path)
 
+        # Extract the text of every page and store it for /ask
+        pages = build_document_index(save_path)
+        save_index(doc_id, pages)
+
         # 5️ Return info for frontend
         return JSONResponse({ 
             "status": "ok",
             "doc_id": doc_id,
             "file_url": f"/static/uploads/{filename}",
-            "intro_page_count": intro_page_count
+            "intro_page_count": intro_page_count,
+            "page_count": len(pages),
             })
         
 

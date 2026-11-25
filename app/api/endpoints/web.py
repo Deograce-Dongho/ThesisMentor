@@ -8,9 +8,9 @@ templates = Jinja2Templates(directory="app/templates")  # Path to your HTML file
 # Home page route
 @router.get("/")
 async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request, "index.html")
 
 # Chat page route
 @router.get("/chat")
 async def chat(request: Request):
-    return templates.TemplateResponse("chat.html", {"request": request})
+    return templates.TemplateResponse(request, "chat.html")

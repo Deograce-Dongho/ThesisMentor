@@ -279,3 +279,38 @@ transform:scale(1.03);
     border-radius:10px;
     box-shadow:0 10px 20px rgba(0,0,0,0.1);
 }
+/* Sources (pages used for the answer) */
+.sources{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sources h4{
+    margin: 4px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.source-card{
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    color: #374151;
+}
+
+.source-card:hover{
+    border-color: #1f2937;
+}
+
+.source-card strong{
+    display: block;
+    margin-bottom: 4px;
+    color: #1f2937;
+}
